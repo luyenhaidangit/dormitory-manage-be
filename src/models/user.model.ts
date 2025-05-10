@@ -1,5 +1,5 @@
 import { pool } from '../config/database';
-import { User } from '../types/user.types';
+import { User } from '../interfaces/model.interface';
 
 export enum RoleAuth {
   ADMIN = 'ADMIN',
