@@ -1,0 +1,16 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userName VARCHAR(50) NOT NULL UNIQUE,
+    phoneNumber VARCHAR(15) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255),
+    refreshToken TEXT,
+    avatar VARCHAR(255),
+    role ENUM('ADMIN', 'STUDENT', 'MANAGER') DEFAULT 'STUDENT',
+    isBlocked BOOLEAN DEFAULT false,
+    otp VARCHAR(6),
+    otpExpiration BIGINT,
+    otpAccessToken TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
